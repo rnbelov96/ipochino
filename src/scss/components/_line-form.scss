@@ -1,5 +1,5 @@
 .line-form {
-  box-shadow: 0px 38px 111px 0 rgba(210, 215, 220, 0.59);
+  box-shadow: 0px 38px 111px 0 rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   padding-top: 41px;
   padding-bottom: 28px;
@@ -10,6 +10,18 @@
   &_desc {
     position: relative;
     top: 40px;
+
+    &::after {
+      content: url('/src/img/form-phone.png');
+      bottom: 0px;
+      right: -82px;
+      position: absolute;
+
+      @media (max-width: 1150px) {
+        content: none;
+      }
+    }
+
     @media (max-width: 650px) {
       display: none;
     }

@@ -1,0 +1,40 @@
+.direct {
+  min-height: 1121px;
+  @include bg;
+  background-image: url('/src/img/bgs/direct-bg.jpg');
+  padding-top: 84px;
+}
+
+.direct__title {
+  @include title;
+  @include max-width(987px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 55px;
+}
+
+.direct__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.direct__item {
+  @include max-width(354px);
+  border-radius: 15px;
+  background-color: white;
+  padding-top: 40px;
+  padding-left: 33px;
+  padding-right: 30px;
+  padding-bottom: 51px;
+  min-height: 458px;
+}
+
+.direct__item-title {
+  font-size: 24px;
+  font-weight: bold;
+  min-height: 80px;
+  margin-bottom: 47px;
+}

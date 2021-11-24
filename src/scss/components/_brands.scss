@@ -1,0 +1,44 @@
+.brands {
+  padding-bottom: 105px;
+
+  @media (max-width: 991px) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 30px;
+  }
+}
+
+.brands__title {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+  }
+}
+
+.brands__list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+
+  @media (max-width: 650px) {
+    gap: 15px;
+  }
+}
+
+.brands__item {
+  @include max-width(195px);
+}
+
+.brands__item-img {
+  width: 100%;
+}
