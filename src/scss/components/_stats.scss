@@ -1,0 +1,135 @@
+.stats {
+  padding-top: 94px;
+
+  @media (max-width: 991px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+  }
+}
+
+.stats__title {
+  @include title;
+  @include max-width(538px);
+  margin-bottom: 62px;
+
+  @media (max-width: 800px) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  b {
+    color: $red;
+    font-weight: bold;
+  }
+}
+
+.stats__list {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  @include max-width(722px);
+  margin-bottom: 60px;
+  position: relative;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+  
+  @media (max-width: 650px) {
+    gap: 30;
+    margin-bottom: 30px;
+  }
+
+  &::after {
+    content: url('/src/img/numbers-img.png');
+    top: -236px;
+    right: -811px;
+    position: absolute;
+
+    @media (max-width: 800px) {
+      content: none;
+    }
+  }
+}
+
+.stats__item {
+  @include max-width(341px);
+  padding-left: 105px;
+  line-height: 1.44;
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-left: 90px;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i})::before {
+      content: url('/src/img/icons/numbers/#{$i}.png');
+    }
+  }
+
+  b {
+    font-size: 30px;
+    line-height: 1.4;
+    font-weight: bold;
+    color: $red;
+
+    @media (max-width: 650px) {
+      font-size: 26px;
+    }
+  }
+}
+
+.stats__block {
+  @include max-width(1055px);
+  padding-top: 36px;
+  padding-left: 48px;
+  padding-bottom: 40px;
+  padding-right: 20px;
+  @include bg;
+  background-position-x: left;
+  background-image: url('/src/img/bgs/numbers-card-bg.jpg');
+
+  @media (max-width: 650px) {
+    padding: 20px;
+  }
+}
+
+.stats__block-content {
+  @include max-width(589px);
+}
+
+.stats__block-text {
+  font-size: 24px;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.stats__block-note {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-right: 40px;
+  padding-left: 40px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0;
+  background-color: $red;
+
+  @media (max-width: 650px) {
+    padding: 20px;
+  }
+}

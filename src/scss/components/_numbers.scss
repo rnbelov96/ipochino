@@ -1,0 +1,121 @@
+.numbers {
+  min-height: 691px;
+  @include bg;
+  background-image: url('/src/img/bgs/history-bg.jpg');
+  padding-top: 89px;
+
+  @media (max-width: 991px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.numbers__title {
+  @include title;
+  @include max-width(983px);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.numbers__text {
+  @include max-width(876px);
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.numbers__block {
+  box-shadow: 0px 38px 111px 0 rgba(0, 0, 0, 0.08);
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  top: 28px;
+  padding-top: 44px;
+  padding-bottom: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    top: 0px;
+  }
+}
+
+.numbers__block-title {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.numbers__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  gap: 115px;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  @media (max-width: 650px) {
+    gap: 65px;
+  }
+}
+
+.numbers__item {
+  padding-left: 193px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-left: 0;
+    padding-top: 150px;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0px;
+
+    @media (max-width: 650px) {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 94px !important;
+    }
+  }
+
+  &:nth-child(1)::before {
+    bottom: -27px;
+    content: url('/src/img/gallery/history/1.png');
+  }
+
+  &:nth-child(2)::before {
+    bottom: -33px;
+    content: url('/src/img/gallery/history/2.png');
+  }
+}
+
+.numbers__item-number {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 11px;
+}
+
+.numbers__item-text {
+  line-height: 1.44;
+  margin-bottom: 0;
+}

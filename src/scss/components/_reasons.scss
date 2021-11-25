@@ -1,0 +1,186 @@
+.reasons__title {
+  @include title;
+  text-align: center;
+  margin-bottom: 45px;
+
+  b {
+    font-weight: bold;
+    color: $red;
+  }
+}
+
+.reasons__text-box {
+  margin-bottom: 90px;
+  @include max-width(508px);
+  position: relative;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &::after {
+    content: url('/src/img/reasons-img.png');
+    position: absolute;
+    top: -9px;
+    right: -1023px;
+
+    @media (max-width: 991px) {
+      content: none;
+    }
+  }
+}
+
+.reasons__text {
+  line-height: 1.44;
+  margin-bottom: 27px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  b {
+    font-size: 30px;
+    line-height: 0.5;
+
+    @media (max-width: 650px) {
+      font-size: 22px;
+    }
+  }
+}
+
+.reasons__content {
+  display: flex;
+  gap: 70px;
+  align-items: flex-end;
+  margin-bottom: 90px;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 220px;
+  }
+}
+
+.reasons__left-side {
+  @include max-width(502px);
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.reasons__diagramm-title {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+
+  @media (max-width: 991px) {
+    text-align: center;
+  }
+}
+
+.reasons__diagramm-img {
+  @include max-width(482px);
+
+  @media (max-width: 991px) {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+.reasons__right-side {
+  @include max-width(530px);
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}
+
+.reasons__info {
+  margin-bottom: 27px;
+  line-height: 1.44;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  b {
+    font-size: 30px;
+    line-height: 0.5;
+
+    @media (max-width: 650px) {
+      font-size: 22px;
+    }
+  }
+}
+
+.reasons__list {
+  display: flex;
+  @include reset-list;
+  gap: 16px;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    gap: 95px;
+  }
+
+  @media (max-width: 650px) {
+    gap: 200px;
+  }
+}
+
+.reasons__item {
+  padding-left: 193px;
+  @include max-width(560px);
+  position: relative;
+  line-height: 1.44;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 0;
+  }
+
+  b {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  &:first-child {
+    &::before {
+      content: url('/src/img/gallery/reasons/1.png');
+      position: absolute;
+      left: 0px;
+      top: -48px;
+
+      @media (max-width: 650px) {
+        top: -170px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &:last-child {
+    &::before {
+      content: url('/src/img/gallery/reasons/2.png');
+      position: absolute;
+      left: 0px;
+      top: -40px;
+
+      @media (max-width: 650px) {
+        top: -170px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
