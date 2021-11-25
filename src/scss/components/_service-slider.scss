@@ -1,0 +1,79 @@
+.service-slider {
+  width: 100%;
+}
+
+.service-slider__wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.service-slider__img-box {
+  display: flex;
+  justify-content: space-between;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.service-slider__img-item {
+  flex-shrink: 0;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  img {
+    pointer-events: none;
+  }
+}
+
+.service-slider__nav-box {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  gap: 30px;
+
+  @media (max-width: 991px) {
+    justify-content: center;
+  }
+}
+
+.service-slider__nav-item {
+  @include reset-btn;
+  width: 11px;
+  height: 11px;
+  background: #d9d9d9;
+  border-radius: 50%;
+
+  &_active {
+    background: #ff3364;
+  }
+}
+
+.service-slider__btns-box {
+  display: flex;
+  gap: 27px;
+  margin-top: 20px;
+}
+
+.service-slider__btn-next,
+.service-slider__btn-prev {
+  @include reset-btn;
+  width: 40px;
+  height: 40px;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.service-slider__btn-next {
+  background-image: url('/src/img/icons/arrow-right.png');
+}
+
+.service-slider__btn-prev {
+  background-image: url('/src/img/icons/arrow-left.png');
+}

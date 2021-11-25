@@ -1,5 +1,27 @@
 export {};
 
+const imagesBoxElList = [
+  ...document.querySelectorAll('.shops__images-container'),
+] as HTMLDivElement[];
+
+const imagesPointElList = [
+  ...document.querySelectorAll('.shops__images-point'),
+] as HTMLDivElement[];
+
+const menuTitleElList = [
+  ...document.querySelectorAll('.js-menu-drop'),
+] as HTMLParagraphElement[];
+
+const dropIconsElList = [
+  ...document.querySelectorAll('.shops__drop-btn'),
+] as HTMLParagraphElement[];
+
+const sliderBoxElList = [
+  ...document.querySelectorAll('.js-slider-box'),
+] as HTMLParagraphElement[];
+
+let currentMenu = 0;
+
 const initSlider = (options: {
   imagesLength: number;
   maxMode: number;
@@ -8,6 +30,7 @@ const initSlider = (options: {
   changeModeBreakpoints?: Array<number>;
   withButtons: boolean;
   withNav: boolean;
+  sliderId: number;
 }) => {
   const getMode = (pageWidth: number) => {
     if (!options.isFlexible) {
@@ -19,8 +42,8 @@ const initSlider = (options: {
         return 1;
       }
       if (
-        pageWidth > options.changeModeBreakpoints[0]
-        && pageWidth <= options.changeModeBreakpoints[1]
+        pageWidth > options.changeModeBreakpoints[0] &&
+        pageWidth <= options.changeModeBreakpoints[1]
       ) {
         return 2;
       }
@@ -81,9 +104,13 @@ const initSlider = (options: {
     }
 
     const sliderItemElListBefore = [...itemElList].slice(-4);
-    newSliderItemElListBefore = sliderItemElListBefore.map(el => el.cloneNode(true));
+    newSliderItemElListBefore = sliderItemElListBefore.map(el =>
+      el.cloneNode(true),
+    );
     const sliderItemElListAfter = [...itemElList].slice(0, 4);
-    newSliderItemElListAfter = sliderItemElListAfter.map(el => el.cloneNode(true));
+    newSliderItemElListAfter = sliderItemElListAfter.map(el =>
+      el.cloneNode(true),
+    );
     imagesBoxEl.prepend(...newSliderItemElListBefore);
     imagesBoxEl.append(...newSliderItemElListAfter);
   };
@@ -193,7 +220,8 @@ const initSlider = (options: {
           sliderImagesBoxEl.style.transition = 'transform .5s';
           const prevCurrentImage = currentImage;
           currentImage = Number(navEl.dataset.image);
-          const newTranslateXPos = initTranslateXPos - translateStep * (currentImage - 1);
+          const newTranslateXPos =
+            initTranslateXPos - translateStep * (currentImage - 1);
           translateXPos = newTranslateXPos;
           sliderImagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
           navItemList[currentImage - 1].classList.add(
@@ -254,7 +282,8 @@ const initSlider = (options: {
       translateStep = 100 / mode;
       initTranslateXPos = cssValueList.find(el => el.mode === mode)
         ?.pos as number;
-      const newTranslateXPos = initTranslateXPos - translateStep * (currentImage - 1);
+      const newTranslateXPos =
+        initTranslateXPos - translateStep * (currentImage - 1);
       translateXPos = newTranslateXPos;
       setStyles(mode);
     }
@@ -330,12 +359,17 @@ const initSlider = (options: {
 
     offset = 0;
 
+    imagesBoxElList[options.sliderId].style.transform = `translate3d(-${
+      currentImage - 1
+    }00%, 0px, 0px)`;
+
     sliderImagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
 
     setTimeout(() => {
       sliderImagesBoxEl.style.transition = '';
       if (currentImage === options.imagesLength && prevCurrentImage === 1) {
-        translateXPos = initTranslateXPos - translateStep * (options.imagesLength - 1);
+        translateXPos =
+          initTranslateXPos - translateStep * (options.imagesLength - 1);
         sliderImagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
       }
 
@@ -362,7 +396,7 @@ const initSlider = (options: {
     if (currentImage === 0) {
       currentImage = options.imagesLength;
     }
-    
+
     if (options.withNav) {
       navItemList[currentImage - 1].classList.add(
         `${options.sliderSectionName}__nav-item_active`,
@@ -372,12 +406,17 @@ const initSlider = (options: {
       );
     }
 
+    imagesBoxElList[options.sliderId].style.transform = `translate3d(-${
+      currentImage - 1
+    }00%, 0px, 0px)`;
+
     sliderImagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
 
     setTimeout(() => {
       sliderImagesBoxEl.style.transition = '';
       if (currentImage === options.imagesLength && prevCurrentImage === 1) {
-        translateXPos = initTranslateXPos - translateStep * (options.imagesLength - 1);
+        translateXPos =
+          initTranslateXPos - translateStep * (options.imagesLength - 1);
         sliderImagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
       }
       activateBtns();
@@ -402,6 +441,10 @@ const initSlider = (options: {
       );
     }
 
+    imagesBoxElList[options.sliderId].style.transform = `translate3d(-${
+      currentImage - 1
+    }00%, 0px, 0px)`;
+
     sliderImagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
 
     setTimeout(() => {
@@ -422,3 +465,53 @@ const initSlider = (options: {
 
   wrapperEl.addEventListener('mouseleave', swipeLeave);
 };
+
+initSlider({
+  imagesLength: 5,
+  isFlexible: false,
+  maxMode: 1,
+  sliderSectionName: 'service-slider',
+  withButtons: true,
+  withNav: false,
+  sliderId: 0,
+});
+
+initSlider({
+  imagesLength: 6,
+  isFlexible: false,
+  maxMode: 1,
+  sliderSectionName: 'partner-slider',
+  withButtons: true,
+  withNav: false,
+  sliderId: 1,
+});
+
+initSlider({
+  imagesLength: 2,
+  isFlexible: false,
+  maxMode: 1,
+  sliderSectionName: 'franch-slider',
+  withButtons: true,
+  withNav: false,
+  sliderId: 2,
+});
+
+menuTitleElList.forEach(el => {
+  el.addEventListener('click', e => {
+    const clickedMenuId = Number((e.currentTarget as HTMLParagraphElement).dataset
+      .menuId);
+    if (clickedMenuId === currentMenu) {
+      return;
+    }
+
+    sliderBoxElList[currentMenu].classList.add('visually-hidden');
+    dropIconsElList[currentMenu].textContent = '+';
+    imagesPointElList[currentMenu].classList.add('visually-hidden');
+
+    currentMenu = clickedMenuId;
+
+    sliderBoxElList[currentMenu].classList.remove('visually-hidden');
+    dropIconsElList[currentMenu].textContent = '-';
+    imagesPointElList[currentMenu].classList.remove('visually-hidden');
+  });
+});

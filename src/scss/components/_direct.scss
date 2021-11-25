@@ -3,6 +3,15 @@
   @include bg;
   background-image: url('/src/img/bgs/direct-bg.jpg');
   padding-top: 84px;
+
+  @media (max-width: 991px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
 }
 
 .direct__title {
@@ -11,6 +20,15 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 55px;
+  color: white;
+  text-align: center;
+
+  & br {
+    display: none;
+    @media (max-width: 650px) {
+      display: block;
+    }
+  }
 }
 
 .direct__list {
@@ -19,6 +37,11 @@
   justify-content: center;
   gap: 40px;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+  }
 }
 
 .direct__item {
@@ -30,6 +53,14 @@
   padding-right: 30px;
   padding-bottom: 51px;
   min-height: 458px;
+
+  @media (max-width: 650px) {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: auto;
+  }
 }
 
 .direct__item-title {
@@ -37,4 +68,58 @@
   font-weight: bold;
   min-height: 80px;
   margin-bottom: 47px;
+
+  @media (max-width: 650px) {
+    font-size: 20px !important;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.direct__item-list {
+  @include reset-list;
+}
+
+.direct__item-item {
+  padding-left: 67px;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    @include bg;
+    background-size: contain;
+    width: 37px;
+    height: 37px;
+    content: '';
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i})::before {
+      background-image: url('/src/img/icons/direct/#{$i}.png');
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+.direct__text {
+  color: white;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.5;
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+  }
 }

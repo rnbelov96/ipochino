@@ -7,6 +7,15 @@
   padding-right: 57px;
   background-color: white;
 
+  &_direct {
+    position: relative;
+    top: 40px;
+
+    @media (max-width: 650px) {
+      top: 0px;
+    }
+  }
+
   &_desc {
     position: relative;
     top: 40px;

@@ -1,0 +1,29 @@
+.video {
+  padding-top: 133px;
+  padding-bottom: 87px;
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.video__title {
+  @include title;
+  @include max-width(1022px);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 47px;
+
+  b {
+    color: $red;
+    font-weight: bold;
+  }
+}
+
+.video__preview {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
