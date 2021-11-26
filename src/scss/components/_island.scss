@@ -1,0 +1,283 @@
+.island {
+  padding-top: 133px;
+  padding-bottom: 95px;
+
+  @media (max-width: 991px) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.island__title {
+  @include title;
+  @include max-width(1006px);
+  margin-bottom: 45px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  b {
+    font-weight: bold;
+    color: $red;
+  }
+}
+
+.island__block {
+  width: 100%;
+  height: 591px;
+  background-image: url('/src/img/island-img.jpg');
+  @include bg;
+  position: relative;
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
+}
+
+.island__block-item {
+  position: absolute;
+  width: 53px;
+  height: 53px;
+
+  &:nth-child(1) {
+    left: 841px;
+    top: 48px;
+
+    & .island__item-block {
+      left: -357px;
+      top: 5px;
+
+      &::before {
+        content: url('/src/img/icons/island/1.png');
+      }
+
+      &::after {
+        right: -10px;
+        top: 9px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    left: 1063px;
+    top: 139px;
+
+    & .island__item-block {
+      left: -357px;
+      top: 5px;
+
+      &::before {
+        content: url('/src/img/icons/island/2.png');
+      }
+
+      &::after {
+        right: -10px;
+        top: 9px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    left: 867px;
+    top: 356px;
+
+    & .island__item-block {
+      left: -357px;
+      top: 5px;
+
+      &::before {
+        content: url('/src/img/icons/island/3.png');
+      }
+
+      &::after {
+        right: -10px;
+        top: 9px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:nth-child(4) {
+    left: 356px;
+    top: 393px;
+
+    & .island__item-block {
+      right: -357px;
+      top: -53px;
+
+      &::before {
+        content: url('/src/img/icons/island/4.png');
+      }
+
+      &::after {
+        left: -10px;
+        top: 68px;
+      }
+    }
+  }
+
+  &:nth-child(5) {
+    left: 78px;
+    top: 265px;
+
+    & .island__item-block {
+      padding-top: 42px;
+      right: -357px;
+      bottom: 0px;
+
+      &::before {
+        content: url('/src/img/icons/island/5.png');
+        top: 42px;
+      }
+
+      &::after {
+        left: -10px;
+        bottom: 13px;
+      }
+    }
+  }
+}
+
+.island__item-sign {
+  width: 100%;
+  height: 100%;
+  @include bg;
+  background-image: url('/src/img/icons/island/sign.png');
+  border-radius: 50%;
+  box-shadow: 0px 4px 57px 0 rgba(0, 0, 0, 0.48);
+  cursor: help;
+
+  &:hover + div {
+    opacity: 1;
+  }
+}
+
+.island__item-block {
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: absolute;
+  width: 337px;
+  box-shadow: 0px 4px 57px 0 rgba(0, 0, 0, 0.48);
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 124px;
+  padding-top: 28px;
+  padding-bottom: 26px;
+  padding-right: 17px;
+  line-height: 1.44;
+  min-height: 156px;
+
+  &::before {
+    position: absolute;
+    top: 28px;
+    left: 30px;
+  }
+
+  &::after {
+    position: absolute;
+    content: url('/src/img/icons/island/triangle.png');
+  }
+}
+
+.island__img {
+  display: none;
+  @media (max-width: 1150px) {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.island__block-bottom {
+  display: none;
+
+  @media (max-width: 1150px) {
+    display: block;
+  }
+}
+
+.island__block-item-bottom {
+  padding-left: 75px;
+  position: relative;
+  @include max-width(412px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) .island__item-block-bottom::before {
+      content: url('/src/img/icons/island/#{$i}.png');
+    }
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.island__item-sign-bottom {
+  width: 53px;
+  height: 53px;
+  @include bg;
+  background-image: url('/src/img/icons/island/sign.png');
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+
+.island__item-block-bottom {
+  width: 337px;
+  box-shadow: 0px 4px 57px 0 rgba(0, 0, 0, 0.48);
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 124px;
+  padding-top: 28px;
+  padding-bottom: 26px;
+  padding-right: 17px;
+  line-height: 1.44;
+  min-height: 156px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-left: 98px;
+    width: 300px;
+    font-size: 16px;
+    min-height: auto;
+  }
+
+  &::before {
+    position: absolute;
+    top: 28px;
+    left: 30px;
+
+    @media (max-width: 650px) {
+      left: 10px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: url('/src/img/icons/island/triangle.png');
+    left: -10px;
+    top: 15px;
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+}
