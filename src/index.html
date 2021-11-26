@@ -743,6 +743,181 @@
         </div>
       </section>
 
+      <section class="calc">
+        <div class="container">
+          <h2 class="calc__title">
+            <b>Честный прогноз:</b> посчитайте, сколько вы заработаете с
+            франшизой iPochino
+          </h2>
+          <div class="calc__content">
+            <div class="calc__phone-box">
+              <p class="calc__phone-result js-calc-result">1 500 000</p>
+            </div>
+            <div class="calc__input-box">
+              <p class="calc__input-label">
+                Устройств приносят в сервисный центр в месяц
+              </p>
+              <input
+                type="range"
+                step="25"
+                min="50"
+                max="200"
+                class="calc__input js-range js-devices-range"
+              />
+              <div class="calc__endpoints">
+                <div class="calc__endpoint calc__endpoint_medium">50</div>
+                <div class="calc__endpoint calc__endpoint_large">100</div>
+                <div class="calc__endpoint calc__endpoint_large">150</div>
+                <div class="calc__endpoint calc__endpoint_large">200</div>
+              </div>
+            </div>
+            <div class="calc__input-box">
+              <p class="calc__input-label">Штук аксессуаров продают в месяц</p>
+              <input
+                type="range"
+                step="25"
+                min="100"
+                max="500"
+                class="calc__input js-range js-accs-range"
+              />
+              <div class="calc__endpoints">
+                <div class="calc__endpoint calc__endpoint_large">100</div>
+                <div class="calc__endpoint calc__endpoint_large">200</div>
+                <div class="calc__endpoint calc__endpoint_large">300</div>
+                <div class="calc__endpoint calc__endpoint_large">400</div>
+                <div class="calc__endpoint calc__endpoint_large">500</div>
+              </div>
+            </div>
+            <div class="calc__input-box">
+              <p class="calc__input-label">
+                Гаджетов в месяц передают на перепрошивку <br />
+                и чистку
+              </p>
+              <input
+                type="range"
+                step="1"
+                min="5"
+                max="20"
+                class="calc__input js-range js-clean-range"
+              />
+              <div class="calc__endpoints">
+                <div class="calc__endpoint calc__endpoint_small">5</div>
+                <div class="calc__endpoint calc__endpoint_medium">10</div>
+                <div class="calc__endpoint calc__endpoint_medium">15</div>
+                <div class="calc__endpoint calc__endpoint_medium">20</div>
+              </div>
+            </div>
+            <div class="calc__input-box">
+              <p class="calc__input-label">Количество сервисных центров</p>
+              <input
+                type="range"
+                step="1"
+                min="1"
+                max="10"
+                class="calc__input js-range js-points-range"
+              />
+              <div class="calc__endpoints">
+                <div class="calc__endpoint calc__endpoint_small">1</div>
+                <div class="calc__endpoint calc__endpoint_small">2</div>
+                <div class="calc__endpoint calc__endpoint_small">3</div>
+                <div class="calc__endpoint calc__endpoint_small">4</div>
+                <div class="calc__endpoint calc__endpoint_small">5</div>
+                <div class="calc__endpoint calc__endpoint_small">6</div>
+                <div class="calc__endpoint calc__endpoint_small">7</div>
+                <div class="calc__endpoint calc__endpoint_small">8</div>
+                <div class="calc__endpoint calc__endpoint_small">9</div>
+                <div class="calc__endpoint calc__endpoint_medium">10</div>
+              </div>
+            </div>
+          </div>
+          <div class="calc__result-box">
+            <p class="calc__result-text">
+              Ваша чистая прибыль составит: <br />
+              <b><span class="js-calc-result">1 500 000</span>&nbsp;рублей</b>
+            </p>
+            <button class="button button_calc">Зафиксировать прибыль</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer">
+        <div class="container">
+          <h2 class="offer__title">
+            Мы подготовили <b>2 специальных предложения</b> для тех, кто хочет
+            запустить больше одного сервисного центра
+          </h2>
+          <ul class="offer__list">
+            <li class="offer__item">
+              <img src="./img/gallery/offer/1.jpg" class="offer__item-img" />
+              <div class="offer__item-text-box">
+                <p class="offer__item-number">01</p>
+                <p class="offer__item-title">
+                  Получите эксклюзив на свой город!
+                </p>
+                <p class="offer__item-text">
+                  Вы можете стать единственным партнёром в своём городе и
+                  спокойно развивать собственную сеть островков по ремонту
+                  цифровой техники.
+                </p>
+              </div>
+            </li>
+            <li class="offer__item">
+              <img src="./img/gallery/offer/2.jpg" class="offer__item-img" />
+              <div class="offer__item-text-box">
+                <p class="offer__item-number">02</p>
+                <p class="offer__item-title">
+                  Предоставляем скидку до 20% при покупке второй и последующей
+                  франшизы iPochino
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <form class="line-form line-form_offer">
+            <h3 class="line-form__title">
+              Получить подробную информацию о спецпредложениях iPochino
+            </h3>
+            <div class="line-form__input-container">
+              <div class="line-form__input-box">
+                <input
+                  type="text"
+                  placeholder="+7 (___) ___ ____"
+                  data-type="phone"
+                  name="phone"
+                  class="line-form__input"
+                />
+              </div>
+              <div class="line-form__input-box">
+                <input
+                  type="text"
+                  placeholder="bestpartner@mail.ru"
+                  data-type="email"
+                  name="email"
+                  class="line-form__input"
+                />
+              </div>
+              <div class="line-form__input-box">
+                <input
+                  type="text"
+                  placeholder="Сантурян Тигран"
+                  data-type="name"
+                  name="name"
+                  class="line-form__input"
+                />
+              </div>
+              <button class="button button_line-form">
+                Получить информацию
+              </button>
+            </div>
+            <p class="line-form__policy">
+              Нажимая кнопку «Получить информацию», я подтверждаю, что
+              ознакомлен и даю согласие на обработку персональных данных на
+              условиях и для целей, определяемых Политикой конфиденциальности
+            </p>
+          </form>
+        </div>
+      </section>
+
       <section class="island">
         <div class="container">
           <h2 class="island__title">
@@ -839,21 +1014,78 @@
         </div>
       </section>
 
-      <!-- <section class="slider">
-        <div class="slider__wrapper">
-          <div class="slider__img-box">
-            <div class="slider__img-item"></div>
-            <div class="slider__img-item"></div>
-            <div class="slider__img-item"></div>
-            <div class="slider__img-item"></div>
+      <section class="steps">
+        <div class="container">
+          <h2 class="steps__title">
+            <b>Вместе пройдём 8 шагов,</b> чтобы запустить ваш сервисный центр
+            iPochino в течение 30 дней
+          </h2>
+          <p class="steps__text">
+            Мы уже запустили 12 сервисных центров и знаем, какие трудности могут
+            вас ожидать и предлагаем полную поддержку при открытии точки — ваш
+            запуск пройдет по расписанию.
+          </p>
+          <ul class="steps__list">
+            <li class="steps__item">
+              <span>1 шаг.</span> <br />
+              Заключение договора на франшизу iPochino. <br />
+              <b>1 день.</b>
+            </li>
+            <li class="steps__item">
+              <span>2 шаг.</span> <br />
+              Поиск локации в торговом центре под организацию островка и
+              оформление аренды. <br />
+              <b>7-12 дней.</b>
+            </li>
+            <li class="steps__item">
+              <span>3 шаг.</span> <br />
+              Ваше офлайн-обучение, как управляющего бизнесом, на базе головной
+              компании. <br />
+              <b>12-14 дней.</b>
+            </li>
+            <li class="steps__item">
+              <span>4 шаг.</span> <br />
+              Изготовление<br />
+              островка согласно разработанному <br />
+              дизайн-проекту.
+              <br />
+              <b>21 день.</b>
+            </li>
+            <li class="steps__item">
+              <span>5 шаг.</span> <br />
+              Поиск, наём <br />
+              и обучение <br />
+              сотрудников. <br />
+              <b>14 дней.</b>
+            </li>
+            <li class="steps__item">
+              <span>6 шаг.</span> <br />
+              Запуск и ведение <br />
+              онлайн-рекламной кампании в вашем городе. <br />
+              <b>7 дней.</b>
+            </li>
+            <li class="steps__item">
+              <span>7 шаг.</span> <br />
+              Первичная поставка запасных частей и аксессуаров для техники Apple
+              и Android со склада головной компании. <br />
+              <b>4 дня.</b>
+            </li>
+            <li class="steps__item">
+              <span>8 шаг.</span> <br />
+              Торжественное <br />
+              открытие вашего <br />
+              сервисного центра. <br />
+              <b>1 день.</b>
+            </li>
+          </ul>
+          <div class="steps__block">
+            <p class="steps__block-text">
+              Хотите получить больше информации о франшизе iPochino?
+            </p>
+            <button class="button button_steps">Получить информацию</button>
           </div>
         </div>
-        <div class="slider__btns-box">
-          <button class="slider__btn-prev"></button
-          ><button class="slider__btn-next"></button>
-        </div>
-        <div class="slider__nav-box"></div>
-      </section> -->
+      </section>
     </main>
 
     <div class="modal">

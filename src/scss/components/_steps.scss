@@ -1,0 +1,147 @@
+.steps {
+  padding-bottom: 65px;
+
+  @media (max-width: 991px) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 30px;
+  }
+}
+
+.steps__title {
+  @include title;
+  @include max-width(1089px);
+  margin-bottom: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  b {
+    color: $red;
+  }
+}
+
+.steps__text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @include max-width(956px);
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.steps__list {
+  @include reset-list;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  position: relative;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+    gap: 25px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 96px;
+    left: 110px;
+    content: url('/src/img/steps-line.png');
+    z-index: -1;
+
+    @media (max-width: 1150px) {
+      content: none;
+    }
+  }
+}
+
+.steps__item {
+  padding-top: 187px;
+  line-height: 1.44;
+  @include max-width(244px);
+  text-align: center;
+
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) span::before {
+      background-image: url('/src/img/gallery/steps/#{$i}.png');
+    }
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      order: #{$i};
+    }
+  }
+
+  &:nth-child(5) {
+    order: 8;
+  }
+
+  &:nth-child(6) {
+    order: 7;
+  }
+
+  &:nth-child(7) {
+    order: 6;
+  }
+
+  &:nth-child(8) {
+    order: 5;
+  }
+
+  @media (max-width: 1150px) {
+    order: initial !important;
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: bold;
+    color: $red;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -192px;
+      width: 175px;
+      height: 175px;
+      @include bg;
+      background-position-y: bottom;
+      content: '';
+    }
+  }
+}
+
+.steps__block {
+  background-color: #f3f3f3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 247px;
+
+  @media (max-width: 650px) {
+    min-height: auto;
+  }
+}
+
+.steps__block-text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

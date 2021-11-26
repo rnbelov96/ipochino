@@ -30,6 +30,13 @@
     }
   }
 
+  &_calc, &_steps {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include max-width(358px);
+  }
+
   &:hover {
     background-image: linear-gradient(to right, #f2387a, #ffcc51);
   }
