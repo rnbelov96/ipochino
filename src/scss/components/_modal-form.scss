@@ -1,0 +1,130 @@
+.modal-form {
+  box-shadow: 0px 5px 133px 0 rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  padding-top: 41px;
+  padding-bottom: 45px;
+  padding-left: 57px;
+  padding-right: 57px;
+  background-color: white;
+  @include max-width(435px);
+  width: 98%;
+
+  @media (max-width: 650px) {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.modal-form__title {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  color: black;
+  text-align: center;
+
+  @media (max-width: 650px) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  b {
+    font-weight: bold;
+    color: $red;
+  }
+}
+
+.modal-form__input-container {
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-direction: column;
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+}
+
+.modal-form__input-box {
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    @include bg;
+    background-size: contain;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i})::before {
+      background-image: url('/src/img/icons/form/#{$i}.png');
+    }
+  }
+}
+
+.modal-form__input {
+  padding-left: 28px;
+  padding-bottom: 13px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #a8a8a8;
+  color: black;
+  font-size: 16px;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid black;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #a8a8a8;
+  }
+
+  &::-moz-placeholder {
+    color: #a8a8a8;
+  }
+
+  &:-ms-input-placeholder {
+    color: #a8a8a8;
+  }
+
+  &:-moz-placeholder {
+    color: #a8a8a8;
+  }
+}
+
+.modal-form__policy {
+  font-size: 12px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #a8a8a8;
+  line-height: 1.33;
+  margin-bottom: 0;
+  text-align: center;
+
+  @media (max-width: 650px) {
+    font-size: 12px !important;
+  }
+
+  button {
+    @include reset-btn;
+    color: #a8a8a8;
+    line-height: 1.33;
+
+    &:focus,
+    &:active,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

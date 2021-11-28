@@ -486,15 +486,15 @@ initSlider({
   sliderId: 1,
 });
 
-initSlider({
-  imagesLength: 2,
-  isFlexible: false,
-  maxMode: 1,
-  sliderSectionName: 'franch-slider',
-  withButtons: true,
-  withNav: false,
-  sliderId: 2,
-});
+// initSlider({
+//   imagesLength: 1,
+//   isFlexible: false,
+//   maxMode: 1,
+//   sliderSectionName: 'franch-slider',
+//   withButtons: false,
+//   withNav: false,
+//   sliderId: 2,
+// });
 
 menuTitleElList.forEach(el => {
   el.addEventListener('click', e => {

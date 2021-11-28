@@ -52,7 +52,7 @@
       top: 5px;
 
       &::before {
-        content: url('/src/img/icons/island/1.png');
+        background-image: url('/src/img/icons/island/1.png');
       }
 
       &::after {
@@ -72,7 +72,7 @@
       top: 5px;
 
       &::before {
-        content: url('/src/img/icons/island/2.png');
+        background-image: url('/src/img/icons/island/2.png');
       }
 
       &::after {
@@ -92,7 +92,7 @@
       top: 5px;
 
       &::before {
-        content: url('/src/img/icons/island/3.png');
+        background-image: url('/src/img/icons/island/3.png');
       }
 
       &::after {
@@ -112,7 +112,7 @@
       top: -53px;
 
       &::before {
-        content: url('/src/img/icons/island/4.png');
+        background-image: url('/src/img/icons/island/4.png');
       }
 
       &::after {
@@ -132,7 +132,7 @@
       bottom: 0px;
 
       &::before {
-        content: url('/src/img/icons/island/5.png');
+        background-image: url('/src/img/icons/island/5.png');
         top: 42px;
       }
 
@@ -177,6 +177,10 @@
     position: absolute;
     top: 28px;
     left: 30px;
+    width: 75px;
+    height: 75px;
+    @include bg;
+    content: '';
   }
 
   &::after {
@@ -212,7 +216,7 @@
 
   @for $i from 1 through 5 {
     &:nth-child(#{$i}) .island__item-block-bottom::before {
-      content: url('/src/img/icons/island/#{$i}.png');
+      background-image: url('/src/img/icons/island/#{$i}.png');
     }
   }
 
@@ -264,6 +268,10 @@
     position: absolute;
     top: 28px;
     left: 30px;
+    width: 75px;
+    height: 75px;
+    @include bg;
+    content: '';
 
     @media (max-width: 650px) {
       left: 10px;

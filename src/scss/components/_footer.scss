@@ -1,0 +1,158 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (max-width: 805px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &_thanks {
+    background-color: white;
+  }
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  @media (max-width: 805px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__company-info {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.footer__address {
+  margin-bottom: 0;
+  padding-left: 40px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.71;
+
+  &:before {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-38%);
+    content: url('/src/img/icons/flag.jpg');
+  }
+}
+
+.footer__policy {
+  @include reset-btn;
+  color: #ff5757;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.footer__center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -9px;
+
+  @media (max-width: 805px) {
+    top: 0px;
+  }
+}
+
+.footer__logo {
+  margin-bottom: 40px;
+  display: block;
+
+  @media (max-width: 805px) {
+    margin-bottom: 15px;
+  }
+}
+
+.footer__links-box {
+  display: flex;
+  gap: 18px;
+}
+
+.footer__link {
+  width: 32px;
+  height: 32px;
+  @include bg;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      background-image: url('/src/img/icons/links/#{$i}.png');
+    }
+  }
+}
+
+.footer__right-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__contant-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+
+  @media (max-width: 805px) {
+    margin-bottom: 15px;
+  }
+}
+
+.footer__phone {
+  font-size: 26px;
+  font-weight: bold;
+  color: black;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 17px;
+    text-align: center;
+  }
+}
+
+.footer__callback {
+  @include reset-btn;
+  color: $red;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.footer__franch5 {
+  font-size: 14px;
+  line-height: 1.71;
+  color: black;
+  padding-left: 55px;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 42px;
+    height: 42px;
+    @include bg;
+    background-image: url('/src/img/icons/franch5.png');
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+    text-decoration: underline;
+  }
+}

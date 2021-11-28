@@ -71,11 +71,15 @@
     position: absolute;
     left: 0px;
     top: 0px;
+    width: 75px;
+    height: 75px;
+    @include bg;
+    content: '';
   }
 
   @for $i from 1 through 4 {
     &:nth-child(#{$i})::before {
-      content: url('/src/img/icons/numbers/#{$i}.png');
+      background-image: url('/src/img/icons/numbers/#{$i}.png');
     }
   }
 

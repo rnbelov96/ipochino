@@ -15,7 +15,7 @@
 
 .shops__content {
   display: flex;
-  gap: 40px;
+  gap: 25px;
 
   @media (max-width: 991px) {
     gap: 20px;
@@ -27,7 +27,7 @@
 }
 
 .shops__sliders-box {
-  @include max-width(342px);
+  @include max-width(366px);
 
   @media (max-width: 850px) {
     order: 2;
