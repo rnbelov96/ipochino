@@ -39,7 +39,7 @@ const openModal = (modalEl: HTMLDivElement) => {
 const modalElList = document.querySelectorAll('.modal');
 const [formModalEl, policyModalEl, youtubeAdvModalEl] = modalElList;
 
-const youtubeAdvModalWrapperEl = youtubeAdvModalEl.querySelector(
+const youtubeAdvModalWrapperEl = youtubeAdvModalEl?.querySelector(
   '.modal__center-wrapper',
 ) as HTMLDivElement;
 let isYoutubeAdvModalOpened = false;

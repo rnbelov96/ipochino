@@ -42,7 +42,7 @@
   &:nth-child(2) {
     .info__item-img {
       @include max-width(376px);
-      height: 469px;
+      height: 477px;
       @include bg;
       background-image: url('/src/img/gallery/info/2.jpg');
       order: 2;
@@ -55,6 +55,12 @@
       @media (max-width: 1150px) {
         br {
           display: block;
+        }
+      }
+
+      @media (max-width: 650px) {
+        br {
+          display: none;
         }
       }
     }
