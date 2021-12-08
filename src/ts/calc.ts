@@ -27,11 +27,11 @@ let pointsCurrentStep = 2;
 let cleanCurrentStep = 2;
 
 const calcResult = () => {
-  result = ((Number(devicesRange.value) * 4500
-      + Number(accsRange.value) * 1050
-      + Number(cleanRange.value) * 400)
-    * Number(pointsRange.value))
-    * 0.35;
+  result = (Number(devicesRange.value) * 6000
+      + Number(accsRange.value) * 1000
+      + Number(cleanRange.value) * 1000)
+    * 0.35
+    * Number(pointsRange.value);
   resultLabelElList.forEach(resultLabelEl => {
     resultLabelEl.textContent = result.toLocaleString();
   });
