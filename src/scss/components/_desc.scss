@@ -4,6 +4,7 @@
   background-image: url('/src/img/bgs/desc-bg.jpg');
   padding-top: 19px;
   color: white;
+  padding-bottom: 30px;
 
   @media (max-height: 800px) {
     min-height: auto;
@@ -64,7 +65,7 @@
   @include max-width(717px);
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
   @media (max-width: 991px) {
     margin-bottom: 30px;
@@ -80,7 +81,6 @@
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  margin-bottom: 30px;
 
   @media (max-width: 991px) {
     flex-wrap: wrap;

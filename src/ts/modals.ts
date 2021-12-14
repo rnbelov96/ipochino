@@ -13,7 +13,7 @@ const modalFormInfoList = [
     button: 'Отправить',
   },
   {
-    title: 'Зафиксируйте вашу прибыль',
+    title: 'Получите <br> бизнес-план',
     button: 'Отправить',
   },
 ];
@@ -105,7 +105,7 @@ const incomeBtnElList = document.querySelectorAll('.js-income');
 incomeBtnElList.forEach(btn => {
   btn.addEventListener('click', () => {
     openedModalList.unshift(formModalEl);
-    formTitleEl.textContent = modalFormInfoList[2].title;
+    formTitleEl.innerHTML = modalFormInfoList[2].title;
     formBtnEl.textContent = modalFormInfoList[2].button;
     openModal(formModalEl as HTMLDivElement);
   });
